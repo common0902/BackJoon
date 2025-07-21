@@ -1,8 +1,5 @@
 int a = int.Parse(Console.ReadLine());
 int A = a;
-bool under = false;
-
-if (a < 10) under = true;
 
 int count = 0;
 
