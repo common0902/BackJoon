@@ -17,6 +17,7 @@ while (true)
     if (a % 5 == 0) a -= 5;
     else a -= 3;
 
+
     count++;
 }
 if(can) Console.WriteLine(count);
