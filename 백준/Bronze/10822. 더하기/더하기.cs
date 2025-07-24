@@ -1,4 +1,4 @@
-int[] ab = Array.ConvertAll(Console.ReadLine().Split(","), int.Parse);
+int[] ab = Array.ConvertAll(Console.ReadLine().Split(','), int.Parse);
 
 int num = 0;
 
