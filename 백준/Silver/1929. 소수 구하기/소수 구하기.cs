@@ -1,31 +1,22 @@
-using System;
+using System.Text;
 
-class Program
+StringBuilder sb = new StringBuilder();
+
+int[] ab = Array.ConvertAll(Console.ReadLine().Split(' '),int.Parse);
+int a = ab[0];
+int b = ab[1];
+
+for (int i = a; i <= b; i++)
 {
-    static void Main()
+    bool can = true;
+
+    if (i == 1) continue;
+
+    for (int j = 2; j <= MathF.Sqrt(i); j++)
     {
-        int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-        int a = arr[0];
-        int b = arr[1];
-
-        bool[] isPrime = new bool[b + 1];
-
-        for (int i = 2; i <= b; i++)
-            isPrime[i] = true;
-
-        for (int i = 2; i * i <= b; i++)
-        {
-            if (isPrime[i])
-            {
-                for (int j = i * i; j <= b; j += i)
-                    isPrime[j] = false;
-            }
-        }
-
-        for (int i = a; i <= b; i++)
-        {
-            if (isPrime[i])
-                Console.WriteLine(i);
-        }
+        if (i % j == 0) can = false;
     }
+
+    if(can) sb.AppendLine(i.ToString()); 
 }
+Console.WriteLine(sb);
