@@ -43,7 +43,7 @@ for (int i = 0; i < arr.Length; i++)
     }
 }
 
-Console.WriteLine(c); //1
-Console.WriteLine(list[list.Count / 2]); //2
+Console.WriteLine(c); 
+Console.WriteLine(list[list.Count / 2]);
 Console.WriteLine(e);
 Console.WriteLine(list.Max() - list.Min());
