@@ -1,67 +1,53 @@
 using System.Text;
 
-namespace ConsoleApp4
+StringBuilder sb = new StringBuilder();
+
+Stack<int> stack = new Stack<int>();
+
+int a = int.Parse(Console.ReadLine());
+
+int index = 1;
+
+bool can = true;
+
+for (int i = 0; i < a; i++)
 {
-    internal class Program
-    {
-        static void Main(string[] args)
+    int b = int.Parse(Console.ReadLine());
+
+    if (stack.Count >= 1)
+        if (stack.Peek() > b)
         {
-            StringBuilder sb = new StringBuilder();
+            can = false;
+            break;
+        }
 
-            Stack<int> stack = new Stack<int>();
-
-            int a = int.Parse(Console.ReadLine());
-
-            int index = 1;
-
-            bool can = true;
-
-            for (int i = 0; i < a; i++)
+    while (true)
+    {
+        if (stack.Count >= 1)
+        {
+            if (stack.Peek() == b)
             {
-                int b = int.Parse(Console.ReadLine());
-
-                if (stack.Count >= 1)
-                    if (stack.Peek() > b)
-                    {
-                        can = false;
-                        break;
-                    }
-
-                while (true)
-                {
-                    
-
-                    if (stack.Count >= 1)
-                    {
-                        if (stack.Peek() == b)
-                        {
-                            stack.Pop();
-                            sb.AppendLine("-");
-                            break;
-                        }
-                        else
-                        {
-                            sb.AppendLine("+");
-                            stack.Push(index);
-                            index++;
-                        }
-                    }
-                    else
-                    {
-                        sb.AppendLine("+");
-                        stack.Push(index);
-                        index++;
-                    }
-                    
-                }
+                stack.Pop();
+                sb.AppendLine("-");
+                break;
             }
-            if(can)
-                Console.WriteLine(sb);
             else
-                Console.WriteLine("NO");
-            
+            {
+                sb.AppendLine("+");
+                stack.Push(index);
+                index++;
+            }
+        }
+        else
+        {
+            sb.AppendLine("+");
+            stack.Push(index);
+            index++;
         }
         
     }
-
 }
+if(can)
+    Console.WriteLine(sb);
+else
+    Console.WriteLine("NO");
