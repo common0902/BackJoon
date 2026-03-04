@@ -6,6 +6,8 @@ int count = 0;
 
 for (int i = 0; i < a.Length; i++)
 {
+    
+    
     if (a[i] == b[0])
     {
         for (int j = 0; j < b.Length; j++)
@@ -27,7 +29,6 @@ for (int i = 0; i < a.Length; i++)
             }
         }
     }
-
     if (can)
     {
         count++;
