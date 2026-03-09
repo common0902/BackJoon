@@ -9,8 +9,8 @@ while (true)
 
     a++;
 }
-
-if(a % 100 < 10)
-    Console.WriteLine("0" + a % 100);
+b = a % 100;
+if(b < 10)
+    Console.WriteLine("0" + b);
 else
-    Console.WriteLine(a % 100);
+    Console.WriteLine(b);
