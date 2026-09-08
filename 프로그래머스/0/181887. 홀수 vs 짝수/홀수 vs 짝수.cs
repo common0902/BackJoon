@@ -8,7 +8,7 @@ public class Solution {
         {
             if(i % 2 ==0)
             {
-                even += num_list[i];
+                even += num_list[i];   
             }
             else
             {
